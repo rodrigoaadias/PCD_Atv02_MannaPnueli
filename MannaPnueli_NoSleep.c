@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-#include <unistd.h>
 
-#define USE_CRITICAL_SECTION 1
+#define USE_CRITICAL_SECTION 0
 
 // variável global de SOMA
 int SOMA = 0;
@@ -15,7 +14,6 @@ int respond = 0;
 void Somar()
 {
     int local = SOMA;
-    sleep(rand() % 2);
     SOMA = local + 1;
 
     printf("SOMA: %d\n", SOMA);
